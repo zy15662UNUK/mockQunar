@@ -1,12 +1,14 @@
 <template>
   <div class="">
     <HomeHeader></HomeHeader>
-    <h1>hello world</h1>
+    <HomeSwiper></HomeSwiper>
+    
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
+import Swiper from './components/Swiper.vue'
 export default {
   name: 'HelloWorld',
   data () {
@@ -15,7 +17,8 @@ export default {
     };
   },
   components:{
-    HomeHeader: Header
+    HomeHeader: Header,
+    HomeSwiper: Swiper
   },
 }
 </script>
