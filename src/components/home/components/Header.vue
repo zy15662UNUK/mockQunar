@@ -7,16 +7,21 @@
       <span class="iconfont">&#xe632;</span> 输入城市/景点/游玩主题
     </div>
     <div class="header-right float-right">
-       城市 <i class="fas fa-sort-down"></i>
+       {{this.city}} <i class="fas fa-sort-down"></i>
     </div>
   </div>
 </template>
 <script>
 export default {
   name: "Header",
-  data: () => ({
+  props: {
+    city: String
+  },
+  data: function(){
+    return {
 
-  })
+    };
+  }
 }
 </script>
 <style lang="stylus" scoped>

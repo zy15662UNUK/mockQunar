@@ -4,10 +4,10 @@
       <p class="title-text">热销推荐</p>
     </div>
     <ul class="item-list">
-      <li class="item" v-for="elem in recomList" :key="elem.id">
-        <img :src="elem.url" alt="" class="item-img">
+      <li class="item" v-for="elem in recommendList" :key="elem.id">
+        <img :src="elem.imgUrl" alt="" class="item-img">
         <div class="item-text">
-          <p class="item-header">{{elem.header}}</p>
+          <p class="item-header">{{elem.title}}</p>
           <p class="item-desc">{{elem.desc}}</p>
           <button type="button" class="item-detail">查看详情</button>
         </div>
@@ -18,40 +18,9 @@
 <script>
 export default {
   name: "Recommend",
+  props: ['recommendList'],
   data: function(){
     return {
-      recomList: [
-        {
-          id: "001",
-          url: "http://img1.qunarzz.com/sight/p0/1703/57/5794796148ac680da3.img.png_200x200_0cf91d82.png",
-          header: "乐华城•乐华欢乐世界",
-          desc: "浪漫陕西首站，浪漫的度假村"
-        },
-        {
-          id: "002",
-          url: "http://img1.qunarzz.com/sight/p0/1412/be/c788f0f3767d2ea037b9b66d2010bfa4.water.jpg_200x200_ead93bcd.jpg",
-          header: "宋城千古情",
-          desc: "杭州宋城的灵魂，世界三大名秀"
-        },
-        {
-          id: "003",
-          url: "http://img1.qunarzz.com/sight/p0/1702/e1/e10c8c5bec0c8e02a3.img.png_200x200_efcaf78c.png",
-          header: "亚龙湾热带天堂森林公园",
-          desc: "浪漫陕西首站，浪漫的度假村"
-        },
-        {
-          id: "004",
-          url: "http://img1.qunarzz.com/sight/p0/1801/4e/4ee5653be58dcb1a3.water.jpg_200x200_d169685d.jpg",
-          header: "香港迪士尼乐园",
-          desc: "浪漫陕西首站，浪漫的度假村"
-        },
-        {
-          id: "005",
-          url: "http://img1.qunarzz.com/sight/p0/1507/9e/7b5e0a44cb0310280b1aeb2a8dd94de8.water.jpg_200x200_3c429960.jpg",
-          header: "长隆国际大马戏剧院",
-          desc: "浪漫陕西首站，浪漫的度假村"
-        },
-      ],
     };
   }
 }

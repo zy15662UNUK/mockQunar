@@ -1,15 +1,15 @@
 <template>
-  <div id="Recommend">
+  <div id="Weekend">
     <div class="title">
       <p class="title-text">周末去哪儿</p>
     </div>
     <ul class="item-list">
-      <li class="item" v-for="elem in recomList" :key="elem.id">
+      <li class="item" v-for="elem in weekendList" :key="elem.id">
         <div class="img-wrapper">
-          <img :src="elem.url" alt="" class="item-img">
+          <img :src="elem.imgUrl" alt="" class="item-img">
         </div>
         <div class="item-text">
-          <p class="item-header">{{elem.header}}</p>
+          <p class="item-header">{{elem.title}}</p>
           <p class="item-desc">{{elem.desc}}</p>
         </div>
       </li>
@@ -19,40 +19,9 @@
 <script>
 export default {
   name: "Weekend",
+  props: ['weekendList'],
   data: function(){
     return {
-      recomList: [
-        {
-          id: "001",
-          url: "http://img1.qunarzz.com/sight/p0/1702/e1/e10c8c5bec0c8e02a3.img.png_200x200_efcaf78c.png",
-          header: "亚龙湾热带天堂森林公园",
-          desc: "浪漫陕西首站，浪漫的度假村"
-        },
-        {
-          id: "002",
-          url: "http://img1.qunarzz.com/sight/p0/1702/e1/e10c8c5bec0c8e02a3.img.png_200x200_efcaf78c.png",
-          header: "亚龙湾热带天堂森林公园",
-          desc: "浪漫陕西首站，浪漫的度假村"
-        },
-        {
-          id: "003",
-          url: "http://img1.qunarzz.com/sight/p0/1702/e1/e10c8c5bec0c8e02a3.img.png_200x200_efcaf78c.png",
-          header: "亚龙湾热带天堂森林公园",
-          desc: "浪漫陕西首站，浪漫的度假村"
-        },
-        {
-          id: "004",
-          url: "http://img1.qunarzz.com/sight/p0/1702/e1/e10c8c5bec0c8e02a3.img.png_200x200_efcaf78c.png",
-          header: "亚龙湾热带天堂森林公园",
-          desc: "浪漫陕西首站，浪漫的度假村"
-        },
-        {
-          id: "005",
-          url: "http://img1.qunarzz.com/sight/p0/1702/e1/e10c8c5bec0c8e02a3.img.png_200x200_efcaf78c.png",
-          header: "亚龙湾热带天堂森林公园",
-          desc: "浪漫陕西首站，浪漫的度假村"
-        },
-      ],
     };
   }
 }
@@ -71,7 +40,7 @@ export default {
     .img-wrapper
       height: 0px;
       overflow: hidden;
-      padding-bottom: 33.9%
+      padding-bottom: 37.09%
       .item-img
         width: 100%;
     .item-text
