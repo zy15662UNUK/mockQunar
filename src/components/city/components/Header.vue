@@ -1,16 +1,15 @@
 <template>
-  <div id="header">
-    <div class="header-left float-left">
-      <router-link :to="{ name: 'Home'}"><i class="fas fa-chevron-left"></i></router-link>
-    </div>
-    <!-- <div class="header-input">
-      <span class="iconfont">&#xe632;</span> 输入城市/景点/游玩主题
-    </div> -->
-    <div class="header-title">
-      城市选择
-    </div>
-    <div class="header-right float-right">
-       <!-- <router-link :to="{ name: 'City'}">{{this.city}} </router-link><i class="fas fa-sort-down"></i> -->
+  <div class="">
+    <div id="header">
+      <div class="header-left float-left">
+        <router-link :to="{ name: 'Home'}"><i class="fas fa-chevron-left"></i></router-link>
+      </div>
+      <div class="header-title">
+        城市选择
+      </div>
+      <div class="header-right float-right">
+         <!-- <router-link :to="{ name: 'City'}">{{this.city}} </router-link><i class="fas fa-sort-down"></i> -->
+      </div>
     </div>
   </div>
 </template>
@@ -24,7 +23,7 @@ export default {
     return {
 
     };
-  }
+  },
 }
 </script>
 <style lang="stylus" scoped>

@@ -1,10 +1,12 @@
 <template>
   <div id="City">
     <CityHeader></CityHeader>
+    <CitySearch></CitySearch>
   </div>
 </template>
 <script>
 import Header from './components/Header.vue'
+import Search from "./components/Search.vue"
 
 export default {
   name: "City",
@@ -14,7 +16,8 @@ export default {
     };
   },
   components: {
-    CityHeader: Header
+    CityHeader: Header,
+    CitySearch: Search
   }
 }
 </script>
