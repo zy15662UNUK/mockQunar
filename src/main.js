@@ -10,6 +10,7 @@ import './assets/styles/reset.css'
 import './assets/styles/border.css'
 import './assets/styles/iconfont.css'
 
+Vue.prototype.bus = new Vue(); //绑定eventbus到Vue实例上
 Vue.use(VueAwesomeSwiper)
 Vue.config.productionTip = false
 fastclick.attach(document.body)

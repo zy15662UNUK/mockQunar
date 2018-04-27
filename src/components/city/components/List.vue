@@ -9,9 +9,7 @@
           <div class="button-wrapper">
             <button type="button" class="button">北京</button>
           </div>
-
         </div>
-
       </div>
       <div class="area">
         <div class="title">
@@ -23,7 +21,7 @@
           </div>
         </div>
       </div>
-      <div class="area" v-for="(elem, key) in cities" :key="key">
+      <div class="area" v-for="(elem, key) in cities" :key="key" :ref="key">
         <div class="title">
           {{key}}
         </div>
@@ -48,6 +46,18 @@ export default {
     //do something after mounting vue instance
     const wrapper = document.getElementById('list');
     this.scroll = new BScroll(wrapper);
+    var self = this;
+    this.bus.$on("change", function(letter){//当页面渲染完成后，给bus加一个监听点击/滑动字母改变的事件
+      self.scrollToLetter(letter);//调用对应处理函数
+    })
+  },
+  methods: {
+    scrollToLetter(letter) {
+      // 下面是点击字母切换到对应部分这个功能
+      const ele = this.$refs[letter][0];//this.$refs[letter]是一个数组，其第一个元素才是DOM元素
+      // 给每个元素加一个:ref="key"，再用this.$refs[key][0]来调用叫key的元素，比jquery方便
+      this.scroll.scrollToElement(ele);//接受的ele必须是一个元素
+    }
   }
 }
 </script>
