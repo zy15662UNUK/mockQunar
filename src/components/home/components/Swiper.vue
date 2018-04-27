@@ -1,6 +1,7 @@
 <template>
   <div id="swiper">
     <swiper :options="swiperOption" v-if="swipeList.length">
+      <!-- 这里v-if的作用是让swiper在轮播数据传入后再显示，否则最后一张图会最先出现 -->
   <!-- slides -->
       <swiper-slide v-for="elem in swipeList" :key="elem.id"><img class="swiper-img" :src="elem.imgUrl"/></swiper-slide>
 
