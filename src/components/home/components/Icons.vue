@@ -1,6 +1,6 @@
 <template>
   <div id="icons">
-    <swiper options="{autoplay: false}">
+    <swiper :options="{autoplay: false}">
       <swiper-slide v-for="page in pages">
         <div class="icon text-center" v-for="elem in page" :key="elem.id">
           <a :href="elem.link">

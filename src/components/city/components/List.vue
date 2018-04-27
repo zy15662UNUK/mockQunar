@@ -18,51 +18,17 @@
           热门城市
         </div>
         <div class="button-list">
-          <div class="button-wrapper">
-            <button type="button" class="button">北京</button>
-          </div>
-          <div class="button-wrapper">
-            <button type="button" class="button">北京</button>
-          </div>
-          <div class="button-wrapper">
-            <button type="button" class="button">北京</button>
-          </div>
-          <div class="button-wrapper">
-            <button type="button" class="button">北京</button>
-          </div>
-          <div class="button-wrapper">
-            <button type="button" class="button">北京</button>
+          <div class="button-wrapper" v-for="elem in hotCities" :key="elem.id">
+            <button type="button" class="button">{{elem.name}}</button>
           </div>
         </div>
       </div>
-      <div class="area">
+      <div class="area" v-for="(elem, key) in cities" :key="key">
         <div class="title">
-          A
+          {{key}}
         </div>
-        <div class="line-list">
-          <div class="list">阿拉尔</div>
-          <div class="list">阿拉尔</div>
-          <div class="list">阿拉尔</div>
-          <div class="list">阿拉尔</div>
-          <div class="list">阿拉尔</div>
-          <div class="list">阿拉尔</div>
-          <div class="list">阿拉尔</div>
-          <div class="list">阿拉尔</div>
-        </div>
-      </div>
-      <div class="area">
-        <div class="title">
-          A
-        </div>
-        <div class="line-list">
-          <div class="list">阿拉尔</div>
-          <div class="list">阿拉尔</div>
-          <div class="list">阿拉尔</div>
-          <div class="list">阿拉尔</div>
-          <div class="list">阿拉尔</div>
-          <div class="list">阿拉尔</div>
-          <div class="list">阿拉尔</div>
-          <div class="list">阿拉尔</div>
+        <div class="line-list" v-for="item in elem" :key="item.id">
+          <div class="list">{{item.name}}</div>
         </div>
       </div>
     </div>
@@ -72,8 +38,11 @@
 import BScroll from 'better-scroll'
 export default {
   name: "List",
+  props: ['cities', 'hotCities'],
   data: function(){
-    return {};
+    return {
+
+    };
   },
   mounted() {
     //do something after mounting vue instance

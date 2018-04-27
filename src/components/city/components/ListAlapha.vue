@@ -1,19 +1,14 @@
 <template>
   <div id="listAlapha">
     <ul>
-      <li class="alpha">A</li>
-      <li class="alpha">A</li>
-      <li class="alpha">A</li>
-      <li class="alpha">A</li>
-      <li class="alpha">A</li>
-      <li class="alpha">A</li>
-
+      <li class="alpha" v-for="(elem, key) in cities" :key="key">{{key}}</li>
     </ul>
   </div>
 </template>
 <script>
 export default {
   name: "listAlpha",
+  props: ['cities'],
   data: function(){
     return {
 
