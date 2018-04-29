@@ -1,7 +1,7 @@
 <template>
   <div id="City">
     <CityHeader></CityHeader>
-    <CitySearch></CitySearch>
+    <CitySearch :cities="cities"></CitySearch>
     <CityList :hotCities="hotCities" :cities="cities"></CityList>
     <CityListAlpha :cities="cities"></CityListAlpha>
   </div>
@@ -32,7 +32,6 @@ export default {
       if(d.ret && d.data){
         this.hotCities = d.data.hotCities;
         this.cities = d.data.cities;
-        console.log(this.cities);
       }
     }
   },
