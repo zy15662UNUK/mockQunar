@@ -7,7 +7,7 @@
         </div>
         <div class="button-list">
           <div class="button-wrapper">
-            <button type="button" class="button">北京</button>
+            <button type="button" class="button">{{this.city}}</button>
           </div>
         </div>
       </div>
@@ -17,7 +17,7 @@
         </div>
         <div class="button-list">
           <div class="button-wrapper" v-for="elem in hotCities" :key="elem.id">
-            <button type="button" class="button">{{elem.name}}</button>
+            <button type="button" class="button" @click="handleCityClick(elem.name)">{{elem.name}}</button>
           </div>
         </div>
       </div>
@@ -26,7 +26,7 @@
           {{key}}
         </div>
         <div class="line-list" v-for="item in elem" :key="item.id">
-          <div class="list">{{item.name}}</div>
+          <div class="list"  @click.naive="handleCityClick(item.name)">{{item.name}}</div>
         </div>
       </div>
     </div>
@@ -34,6 +34,7 @@
 </template>
 <script>
 import BScroll from 'better-scroll'
+import { mapActions, mapState } from 'vuex'
 export default {
   name: "List",
   props: ['cities', 'hotCities'],
@@ -41,6 +42,9 @@ export default {
     return {
 
     };
+  },
+  computed: {
+    ...mapState(['city']),
   },
   mounted() {
     //do something after mounting vue instance
@@ -52,11 +56,17 @@ export default {
     })
   },
   methods: {
+    ...mapActions(["cityChange"]),
     scrollToLetter(letter) {
       // 下面是点击字母切换到对应部分这个功能
       const ele = this.$refs[letter][0];//this.$refs[letter]是一个数组，其第一个元素才是DOM元素
       // 给每个元素加一个:ref="key"，再用this.$refs[key][0]来调用叫key的元素，比jquery方便
       this.scroll.scrollToElement(ele);//接受的ele必须是一个元素
+    },
+    handleCityClick(city) {// 点击后切换所在城市
+      console.log(city);
+      this.cityChange(city);// 触发vuex 的 store 中cityChange这个action
+      this.$router.push('/');// 编程式路由，使页面路由至'/'也就是首页
     }
   }
 }

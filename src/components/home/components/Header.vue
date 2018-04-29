@@ -12,6 +12,7 @@
   </div>
 </template>
 <script>
+import { mapActions, mapState } from 'vuex'
 export default {
   name: "Header",
   props: {
@@ -21,6 +22,9 @@ export default {
     return {
 
     };
+  },
+  computed: {
+    ...mapState(["city"]),
   }
 }
 </script>
@@ -52,6 +56,7 @@ export default {
       padding-left: 0.2rem;
 
     .header-right
-      width: 1.24rem;
+      min-width: 1.04rem;
+      padding: 0 0.1rem;
       text-align: center
 </style>
