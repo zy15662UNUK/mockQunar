@@ -15,9 +15,6 @@
 import { mapActions, mapState } from 'vuex'
 export default {
   name: "Header",
-  props: {
-    city: String
-  },
   data: function(){
     return {
 
