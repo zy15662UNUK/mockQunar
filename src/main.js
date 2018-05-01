@@ -9,7 +9,7 @@ import 'swiper/dist/css/swiper.css'
 import './assets/styles/reset.css'
 import './assets/styles/border.css'
 import './assets/styles/iconfont.css'
-
+import store from "./store/index.js"
 Vue.prototype.bus = new Vue(); //绑定eventbus到Vue实例上
 Vue.use(VueAwesomeSwiper)
 Vue.config.productionTip = false
@@ -18,6 +18,7 @@ fastclick.attach(document.body)
 new Vue({
   el: '#app',
   router,
+  store: store,
   components: { App },
   template: '<App/>'
 })

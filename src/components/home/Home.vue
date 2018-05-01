@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <HomeHeader :city="city"></HomeHeader>
+    <HomeHeader></HomeHeader>
     <HomeSwiper :swipeList="swipeList"></HomeSwiper>
     <HomeIcons></HomeIcons>
     <HomeRecommend :recommendList="recommendList"></HomeRecommend>
@@ -19,7 +19,6 @@ export default {
   name: 'Home',
   data () {
     return {
-      city: '',
       swipeList: [],
       recommendList: [],
       weekendList: []
@@ -33,9 +32,8 @@ export default {
     HomeWeekend: Weekend
   },
   mounted() {
-    //do something after mounting vue instance
+    //do something before creating vue instance
     this.getHomeInfo();
-
   },
   methods: {
     getHomeInfo() {
@@ -45,7 +43,7 @@ export default {
     getHomeInfoSucc(res){
       var d = res.data;
       if(d.ret && d.data){
-        this.city = d.data.city;
+        // this.$store.state.city = d.data.city;
         this.swipeList = d.data.swiperList;
         this.recommendList = d.data.recommendList;
         this.weekendList = d.data.weekendList;

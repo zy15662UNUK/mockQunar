@@ -8,7 +8,6 @@
         城市选择
       </div>
       <div class="header-right float-right">
-         <!-- <router-link :to="{ name: 'City'}">{{this.city}} </router-link><i class="fas fa-sort-down"></i> -->
       </div>
     </div>
   </div>
