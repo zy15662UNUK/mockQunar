@@ -1,14 +1,14 @@
 <template>
   <div id="Banner" @click="gallaryShow">
-    <img src="http://img1.qunarzz.com/sight/p0/201404/23/04b92c99462687fa1ba45c1b5ba4ad77.jpg_600x330_bf9c4904.jpg"
+    <img :src="bannerImg"
          alt="banner-img"
          class="banner-img"
     >
     <div class="banner-info">
-      <div class="banner-text">大连圣亚海洋世界(AAAA景区)</div>
-      <div class="banner-num"><i class="far fa-images"></i> 39</div>
+      <div class="banner-text">{{sightName}}</div>
+      <div class="banner-num"><i class="far fa-images"></i> {{gallaryImgs.length}}</div>
     </div>
-    <commonGallary :swipeList="swipeList" v-show="showGallary"></commonGallary>
+    <commonGallary :swipeList="gallaryImgs" v-show="showGallary"></commonGallary>
   </div>
 </template>
 <script>
@@ -16,6 +16,7 @@ import { mapState, mapMutations } from 'vuex'
 import Gallary from '../../common/Gallary.vue'
 export default {
   name: "Banner",
+  props: ['sightName', 'bannerImg', 'gallaryImgs'],
   computed: {
     ...mapState(["showGallary"]),
   },

@@ -23,5 +23,8 @@ export default new Router({
       name: 'Detail',
       component: Detail
     }
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+  return { x: 0, y: 0 }
+} //避免页面之间滚动互相影响。比如主页滚动到一个位置，不会让另一个页面也滚动到这个位置
 })
