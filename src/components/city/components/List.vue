@@ -64,7 +64,6 @@ export default {
       this.scroll.scrollToElement(ele);//接受的ele必须是一个元素
     },
     handleCityClick(city) {// 点击后切换所在城市
-      console.log(city);
       this.cityChange(city);// 触发vuex 的 store 中cityChange这个action
       this.$router.push('/');// 编程式路由，使页面路由至'/'也就是首页
     }

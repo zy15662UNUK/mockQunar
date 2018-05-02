@@ -27,6 +27,10 @@ export default {
   activated () { // 当页面加载后，就给窗口绑定事件滚轮事件
     window.addEventListener("scroll", this.handleScroll);
   },
+  deactivated () {// deactivated在离开页面时候执行。给全局页面解绑，一旦离开这个页面就解除绑定。
+    // 上面绑定的是全局事件，也就是在任何一个页面滚动都会触发这个事件
+    window.removeEventListener("scroll", this.handleScroll);
+  },
   methods: {
     handleScroll() {
       var top = document.documentElement.scrollTop;
