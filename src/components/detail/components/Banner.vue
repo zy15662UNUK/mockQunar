@@ -8,12 +8,15 @@
       <div class="banner-text">{{sightName}}</div>
       <div class="banner-num"><i class="far fa-images"></i> {{gallaryImgs.length}}</div>
     </div>
-    <commonGallary :swipeList="gallaryImgs" v-show="showGallary"></commonGallary>
+    <Fade>
+      <commonGallary :swipeList="gallaryImgs" v-show="showGallary"></commonGallary>
+    </Fade>
   </div>
 </template>
 <script>
 import { mapState, mapMutations } from 'vuex'
 import Gallary from '../../common/Gallary.vue'
+import Fade from '../../fade/Fade.vue'
 export default {
   name: "Banner",
   props: ['sightName', 'bannerImg', 'gallaryImgs'],
@@ -27,6 +30,7 @@ export default {
   },
   components: {
     "commonGallary": Gallary,
+    "Fade": Fade
   },
   methods: {
     ...mapMutations(["gallaryShow"])
